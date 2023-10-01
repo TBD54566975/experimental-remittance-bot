@@ -6,7 +6,11 @@ This app uses llama2 to show a ChatGPT competitive app to score remittance descr
 
 Uses<a href="https://ai.meta.com/llama/">llama2</a> model (7b also works ok) so it can run on modest hardware. 
 
-NOTE: Obviously not ready for any serious use, more a showcase of how useful llama2 can be out of the box.  
+NOTE: Obviously not ready for any serious use, more a showcase of how useful llama2 can be out of the box. 
+
+![Screenshot 2023-10-02 at 8 58 56 am](https://github.com/TBD54566975/experimental-remittance-bot/assets/14976/46ead9b7-21aa-4325-b63b-060520011cb7)
+
+![Screenshot 2023-10-02 at 8 59 15 am](https://github.com/TBD54566975/experimental-remittance-bot/assets/14976/754715d1-fc05-4dda-b344-23fdce21e0d6)
 
 # Installing
 
