@@ -1,6 +1,6 @@
 import json
 import requests
-
+import re
 # NOTE: ollama must be running for this to work, start the ollama app or run `ollama serve`
 model = 'llama2' # TODO: update this for whatever model you wish to use
 
@@ -141,7 +141,23 @@ def generate(explanation, context):
             raise Exception(body['error'])
 
         if body.get('done', False):
-            return response.strip(), body['context']
+            return extract_reason(response.strip()), body['context']
+        
+def extract_reason(text):
+    # Use the DOTALL flag which makes the '.' special character match any character, including a newline
+    flag_match = re.search(r'Flag: (.+?)\n', text, re.DOTALL)
+    reason_match = re.search(r'Reason: (.+?)(\n\n|$)', text, re.DOTALL)  # Either two newlines or end of string indicates the end of the reason
+
+    # Extract values if matches are found
+    flag_value = flag_match.group(1).strip() if flag_match else None
+    reason_value = reason_match.group(1).strip() if reason_match else None
+
+    # Create an object (dictionary in this case) with the extracted values
+    result = {
+        'Flag': flag_value,
+        'Reason': reason_value
+    }            
+    return result
 
 def main():
     pull_model()
