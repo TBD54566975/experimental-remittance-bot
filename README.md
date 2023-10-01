@@ -1,12 +1,12 @@
 # Remittance risk flagging app
 
-*Experimental*
+*Experimental* showcase of llama2 pre-trained open source models. 
 
 This app uses llama2 to show a ChatGPT competitive app to score remittance descriptions. Ie a human explains what they are transferring funds for and it comes up with a High,Low or Med score and reason for flagging for a further screening perhaps by another human (or to apply other rules). 
 
 Uses <a href="https://ai.meta.com/llama/">llama2</a> model (7b also works ok) so it can run on modest hardware. 
 
-NOTE: Obviously not ready for any serious use, more a showcase of how useful llama2 can be out of the box. 
+NOTE: Obviously not ready for any production use, more a showcase of how useful llama2 can be out of the box. 
 
 ![Screenshot 2023-10-02 at 8 58 56 am](https://github.com/TBD54566975/experimental-remittance-bot/assets/14976/46ead9b7-21aa-4325-b63b-060520011cb7)
 
