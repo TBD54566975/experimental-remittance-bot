@@ -100,10 +100,22 @@ Now classify this. Please ensure to prefix with "Flag" and "Reason" as appropria
 Explanation: $EXP"""
 
 
+def pull_model():
+    print("checking if model is available and fetching if not")
+    url = 'http://localhost:11434/api/pull'
+    headers = {'Content-Type': 'application/json'}
+    data = {
+        "name": "llama2:7b"
+    }
+
+    response = requests.post(url, headers=headers, data=json.dumps(data))
+
+    print(response.text)
+
 def generate(explanation, context):
     
     prompt = template.replace('$EXP', explanation)
-    print(prompt)
+    
 
     r = requests.post('http://localhost:11434/api/generate',
                       json={
@@ -132,6 +144,7 @@ def generate(explanation, context):
             return response.strip(), body['context']
 
 def main():
+    pull_model()
     context = [] # the context stores a conversation history, you can use this to make the model more context aware
     explanation = "Monthly allowance for my son"
     

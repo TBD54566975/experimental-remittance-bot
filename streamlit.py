@@ -2,7 +2,7 @@
 
 import streamlit as st
 import time
-from olama_client import generate
+from olama_client import generate, pull_model
 
 def process_input(explanation):
     print(explanation)
@@ -22,4 +22,6 @@ def main():
         st.text_area('Output:', value=result, height=200)
 
 if __name__ == '__main__':
+    with st.spinner("Loading model..."):
+        pull_model()
     main()
