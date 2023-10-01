@@ -4,7 +4,7 @@
 
 This app uses llama2 to show a ChatGPT competitive app to score remittance descriptions. Ie a human explains what they are transferring funds for and it comes up with a High,Low or Med score and reason for flagging for a further screening perhaps by another human (or to apply other rules). 
 
-Uses<a href="https://ai.meta.com/llama/">llama2</a> model (7b also works ok) so it can run on modest hardware. 
+Uses <a href="https://ai.meta.com/llama/">llama2</a> model (7b also works ok) so it can run on modest hardware. 
 
 NOTE: Obviously not ready for any serious use, more a showcase of how useful llama2 can be out of the box. 
 
