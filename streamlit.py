@@ -20,7 +20,7 @@ def main():
     if st.button('Submit'):
         with st.spinner('Processing...'):
             result = process_input(explanation)
-        st.text_area('Output:', value=result, height=200)
+        st.json(result)
 
 @st.cache_data
 def load_model():
