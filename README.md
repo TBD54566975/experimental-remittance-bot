@@ -14,13 +14,16 @@ NOTE: Obviously not ready for any production use, more a showcase of how useful 
 
 # Installing
 
-1. Uses ollama to host llama2 models for your platform (https://ollama.ai/) - dowbload and install appropriate version for your platform. 
+1. This uses ollama to host llama2 models for your platform (https://ollama.ai/) - dowbload and install appropriate version for your platform. 
+
+eg on linux you can run: `docker run -p 11434:11434 ollama/ollama`
+on macos `ollama serve` (or run the application)
 
 2. Install requirements.txt
 
 `pip install -r requirements.txt`
 
-3. Run `streamlit run streamlit.py` to run the app. The first time you access it it may take a while as it downloads the appropriate model.
+3. Run `streamlit run streamlit.py` to run the app. The first time you access it it may take a while as it downloads the appropriate model. You can set OLLAMA_HOST to point to `hostname:port` for the ollama server.
 
 
 

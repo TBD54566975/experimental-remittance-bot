@@ -1,8 +1,12 @@
 import json
 import requests
 import re
+import os
 # NOTE: ollama must be running for this to work, start the ollama app or run `ollama serve`
 model = 'llama2' # TODO: update this for whatever model you wish to use
+
+# load OLLAMA_HOST env if it exists and default otherwise
+ollama_host = os.environ.get('OLLAMA_HOST', 'http://localhost:11434')
 
 template = """
 Imagine you are a worker whose job is to ask questions about what purpose funds transfer (international remittance) is to pay for, and you flag it accordingly. 
@@ -102,7 +106,7 @@ Explanation: $EXP"""
 
 def pull_model():
     print("checking if model is available and fetching if not")
-    url = 'http://localhost:11434/api/pull'
+    url = ollama_host + '/api/pull'
     headers = {'Content-Type': 'application/json'}
     data = {
         "name": "llama2:7b"
@@ -117,7 +121,7 @@ def generate(explanation, context):
     prompt = template.replace('$EXP', explanation)
     
 
-    r = requests.post('http://localhost:11434/api/generate',
+    r = requests.post(ollama_host + '/api/generate',
                       json={
                           'model': model,
                           'prompt': prompt,
