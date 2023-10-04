@@ -23,7 +23,9 @@ on macos `ollama serve` (or run the application)
 
 `pip install streamlit`
 
-3. Run `streamlit run streamlit.py` to run the app. The first time you access it it may take a while as it downloads the appropriate model. You can set OLLAMA_HOST to point to `hostname:port` for the ollama server.
+3. Run `streamlit run streamlit.py` to run the app. The first time you access it it will take a long while as it downloads the appropriate model.
+  
+(optional) You can set OLLAMA_HOST to point to `hostname:port` for the ollama server.
 
 
 
